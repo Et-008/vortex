@@ -1,3 +1,5 @@
+'use client'
+
 import { GeistSans } from 'geist/font/sans'
 import ThemeProvider from '@/providers/ThemeProvider'
 import NextTopLoader from 'nextjs-toploader'
@@ -5,16 +7,18 @@ import { Analytics } from '@vercel/analytics/react'
 import './globals.css'
 import { ReactQueryDevtools } from '@tanstack/react-query-devtools'
 import ReactQueryProvider from '@/providers/ReactQueryProvider'
+import SideNav from '@/components/ui/side-nav'
+import AppLoadingState from '@/components/AppLoadingState'
 
 const defaultUrl = process.env.VERCEL_URL
   ? `https://${process.env.VERCEL_URL}`
   : 'http://localhost:3000'
 
-export const metadata = {
-  metadataBase: new URL(defaultUrl),
-  title: 'Next.js and Supabase Starter Kit',
-  description: 'The fastest way to build apps with Next.js and Supabase',
-}
+// export const metadata = {
+//   metadataBase: new URL(defaultUrl),
+//   title: 'Next.js and Supabase Starter Kit',
+//   description: 'The fastest way to build apps with Next.js and Supabase',
+// }
 
 export default function RootLayout({
   children,
@@ -28,10 +32,11 @@ export default function RootLayout({
       style={{ colorScheme: 'dark' }}
     >
       <body className="bg-background text-foreground">
-        <NextTopLoader showSpinner={false} height={2} color="#2acf80" />
+        <AppLoadingState />
+        <NextTopLoader showSpinner height={2} color="#2acf80" />
         <ThemeProvider
           attribute="class"
-          defaultTheme="dark"
+          defaultTheme="system"
           enableSystem
           disableTransitionOnChange
         >

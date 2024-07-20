@@ -4,7 +4,7 @@ import SignUpUserSteps from '@/components/SignUpUserSteps'
 import Header from '@/components/Header'
 import { cookies } from 'next/headers'
 import { createServerClient } from '@/utils/supabase'
-import ThemeToggle from '@/components/ThemeToggle'
+import ThemeToggle from '@/components/buttons/ThemeToggle'
 
 export default async function Index() {
   const cookieStore = cookies()

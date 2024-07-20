@@ -1,0 +1,20 @@
+{
+  "data": {
+    "components": [
+      {
+        "id": "uniqueId1",
+        "name": "Get Requests",
+        "img": "getRequests.png"
+      },
+      {
+        "id": "uniqueId2",
+        "name": "Post Requests",
+        "img": "postRequests.png"
+      }
+    ],
+    "layout": [
+      { "i": "uniqueId1", "x": 0, "y": 0, "w": 5, "h": 3, "static": true },
+      { "i": "uniqueId2", "x": 5, "y": 4, "w": 5, "h": 3, "minW": 2, "maxW": 4 }
+    ]
+  }
+}
