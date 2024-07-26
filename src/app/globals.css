@@ -232,3 +232,7 @@ label {
   background-color: var(--secondary-foreground);
   border: 1px solid slategrey;
 }
+
+.max-w-55 {
+  max-width: 55%;
+}

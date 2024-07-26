@@ -10,7 +10,6 @@ export default function Login({
 }) {
   const signIn = async (formData: FormData) => {
     'use server'
-    // EventEmitter.dispatch('Apploader', { showLoader: true })
 
     const email = formData.get('email') as string
     const password = formData.get('password') as string
@@ -31,7 +30,6 @@ export default function Login({
 
   const signUp = async (formData: FormData) => {
     'use server'
-    // EventEmitter.dispatch('Apploader', { showLoader: true })
 
     const origin = headers().get('origin')
     const email = formData.get('email') as string

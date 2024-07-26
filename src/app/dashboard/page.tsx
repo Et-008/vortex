@@ -1,11 +1,10 @@
 'use client'
 
-import React, { useEffect, useState } from 'react'
-import ReactGridLayout, { Responsive, WidthProvider } from 'react-grid-layout'
+import React, { ReactNode, useEffect, useState } from 'react'
+import { Responsive, WidthProvider } from 'react-grid-layout'
 import 'react-grid-layout/css/styles.css'
 import 'react-resizable/css/styles.css'
 import Image from 'next/image'
-import _ from 'lodash'
 
 const GridLayout = WidthProvider(Responsive)
 
@@ -132,6 +131,36 @@ export default function DashBoard() {
       })
   }, [])
 
+  function generateComponents() {
+    const comps = []
+    for (let i = 0; i < components.length; i++) {
+      const comp = components[i]
+      const layoutCoords: Layout | undefined = layout?.find(
+        (l) => l?.i === comp.id,
+      )
+      if (layoutCoords) {
+        const { x, y, h, w, i } = layoutCoords
+        comps.push(
+          <div
+            className="grid-card"
+            id={comp?.id}
+            key={comp?.id}
+            data-grid={layoutCoords ? { x, y, h, w, i } : {}}
+          >
+            <Image
+              src={`/${comp?.img}`}
+              width={1000}
+              height={760}
+              className="block"
+              alt="Screenshots of the dashboard project showing desktop version"
+            />
+          </div>,
+        )
+      }
+    }
+    return comps
+  }
+
   return (
     <GridLayout
       className="layout"
@@ -141,33 +170,14 @@ export default function DashBoard() {
       rowHeight={100}
       width={1200}
       isDraggable
-      isRearrangeable
+      // isRearrangeable
       isResizable
       onDrop={handleDropChange}
       onBreakpointChange={handleBreakPointChange}
       onLayoutChange={handleLayoutChange}
       compactType={null}
     >
-      {components?.map((component) => {
-        const layoutCoords: Layout = layout?.find((l) => l?.i === component.id)
-        const { x, y, h, w, i } = layoutCoords
-        return (
-          <div
-            className="grid-card"
-            id={component?.id}
-            key={component?.id}
-            data-grid={{ x: x, y: y, h: h, w: w, i: i }}
-          >
-            <Image
-              src={`/${component?.img}`}
-              width={1000}
-              height={760}
-              className="block"
-              alt="Screenshots of the dashboard project showing desktop version"
-            />
-          </div>
-        )
-      })}
+      {generateComponents()}
     </GridLayout>
   )
 }

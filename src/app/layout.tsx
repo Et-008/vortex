@@ -8,7 +8,6 @@ import './globals.css'
 import { ReactQueryDevtools } from '@tanstack/react-query-devtools'
 import ReactQueryProvider from '@/providers/ReactQueryProvider'
 import SideNav from '@/components/ui/side-nav'
-import AppLoadingState from '@/components/AppLoadingState'
 
 const defaultUrl = process.env.VERCEL_URL
   ? `https://${process.env.VERCEL_URL}`
@@ -32,7 +31,6 @@ export default function RootLayout({
       style={{ colorScheme: 'dark' }}
     >
       <body className="bg-background text-foreground">
-        <AppLoadingState />
         <NextTopLoader showSpinner height={2} color="#2acf80" />
         <ThemeProvider
           attribute="class"

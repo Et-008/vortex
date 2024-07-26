@@ -31,7 +31,7 @@ const ThemeToggle = ({ side, showThemeName }: ThemeToggleProps) => {
 
   return (
     <Button
-      className="justify-start gap-2"
+      className={`${showThemeName ? 'justify-start' : 'justify-center'} gap-2`}
       onClick={() => setTheme(theme === 'light' ? 'dark' : 'light')}
       variant="outline"
       size={showThemeName ? 'default' : 'icon'}
