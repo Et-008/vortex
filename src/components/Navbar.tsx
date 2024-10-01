@@ -19,7 +19,7 @@ export default async function Navbar() {
   const isSupabaseConnected = canInitSupabaseClient()
 
   return (
-    <nav className="flex h-16 w-full justify-center border-b border-b-foreground/10">
+    <nav className="flex h-16 w-full justify-center bg-secondary-foreground text-secondary">
       <div className="flex w-full max-w-4xl items-center justify-between p-3 text-sm">
         {isSupabaseConnected && <AuthButton />}
       </div>

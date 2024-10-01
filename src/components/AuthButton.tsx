@@ -41,12 +41,30 @@ export default async function AuthButton() {
       </div>
     </div>
   ) : (
-    <div className="flex w-full items-center gap-10">
+    <div className="flex w-full items-center gap-10 font-extrabold">
       <Link
         href="/"
         className="bg-btn-background hover:bg-btn-background-hover flex gap-2 rounded-md px-3 py-2 no-underline"
       >
         ControlRoom
+      </Link>
+      <Link
+        href="/pricing"
+        className="bg-btn-background hover:bg-btn-background-hover flex gap-2 rounded-md no-underline"
+      >
+        how to use?
+      </Link>
+      <Link
+        href="/pricing"
+        className="bg-btn-background hover:bg-btn-background-hover flex gap-2 rounded-md no-underline"
+      >
+        what we have!
+      </Link>
+      <Link
+        href="/pricing"
+        className="bg-btn-background hover:bg-btn-background-hover flex gap-2 rounded-md no-underline"
+      >
+        security & privacy
       </Link>
       <Link
         href="/pricing"

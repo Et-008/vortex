@@ -98,7 +98,7 @@ export default function Login({
           placeholder="••••••••"
           required
         />
-        <button className="mb-2 rounded-md bg-green-700 px-4 py-2 text-foreground">
+        <button className="mb-2 rounded-md px-4 py-2 text-foreground accent-background">
           Sign In
         </button>
         <button

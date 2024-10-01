@@ -8,10 +8,7 @@ import LogoutButton from '../buttons/LogoutButton'
 
 export default function SideNav() {
   return (
-    <div
-      className="flex h-full flex-col gap-3 px-3 py-4 md:px-2"
-      style={{ backgroundColor: 'hsl(var(--muted-foreground))' }}
-    >
+    <div className="flex h-full flex-col gap-3 bg-secondary-foreground px-3 py-4 md:px-2">
       <div className="flex h-full flex-col gap-3">
         <Link
           className={clsx(
